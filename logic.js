@@ -129,7 +129,7 @@ function gotLocation(position) {
 let weatherData
 function useLatLong() {
     // Fetch The Weather
-    let url = `http://api.weatherapi.com/v1/forecast.json?key=02110cde51964733a68123509252005&q=${coords}&days=1&aqi=no&alerts=no`
+    let url = `https://api.weatherapi.com/v1/forecast.json?key=02110cde51964733a68123509252005&q=${coords}&days=1&aqi=no&alerts=no`
     fetch(url)
         .then((responce) => {
             return responce.json()
