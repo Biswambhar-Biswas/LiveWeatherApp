@@ -1,6 +1,8 @@
+
 let placeName = document.getElementById('location')
 let temp = document.getElementById('temp')
 let weather = document.getElementById('weather')
+let cloud = document.getElementById('cloud')
 
 
 //fetch all buttons
@@ -78,10 +80,11 @@ let eighteenImg = document.getElementById('eighteenImg')
 let nineteenImg = document.getElementById('nineteenImg')
 let twentyImg = document.getElementById('twentyImg')
 let twentyoneImg = document.getElementById('twentyoneImg')
-let twentytwoImg = document.getElementById('twentyTwoImg')
-let twentythreeImg = document.getElementById('twentyThreeImg')
+let twentytwoImg = document.getElementById('twentytwoImg')
+let twentythreeImg = document.getElementById('twentythreeImg')
 
 
+let zeroTemp = document.getElementById('zeroTemp')
 let oneTemp = document.getElementById('oneTemp')
 let twoTemp = document.getElementById('twoTemp')
 let threeTemp = document.getElementById('threeTemp')
@@ -106,76 +109,131 @@ let twentyoneTemp = document.getElementById('twentyoneTemp')
 let twentytwoTemp = document.getElementById('twentytwoTemp')
 let twentythreeTemp = document.getElementById('twentythreeTemp')
 
-let latitude,longitude
+let magnifyne = document.getElementById('magnifyne')
 
-function gotLocation(position){
+
+let latitude, longitude
+let coords
+
+function gotLocation(position) {
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
 
- latitude = position.coords.latitude;
- longitude = position.coords.longitude;
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    coords = `${latitude},${longitude}`
 
     useLatLong();
 }
 
+let weatherData
 function useLatLong() {
-// Fetch The Weather
-let url = `http://api.weatherapi.com/v1/forecast.json?key=02110cde51964733a68123509252005&q=${latitude},${longitude}&days=1&aqi=no&alerts=no`
-fetch(url)
-.then((responce)=>{
-    return responce.json()
-})
-.then((data)=>{
-    console.log(data);
-    placeName.innerHTML = data.location.name   //nam ta change kora holo
-    temp.innerHTML = `${data.current.temp_c}&deg`
-    weather.innerHTML = data.current.condition.text
+    // Fetch The Weather
+    let url = `http://api.weatherapi.com/v1/forecast.json?key=02110cde51964733a68123509252005&q=${coords}&days=1&aqi=no&alerts=no`
+    fetch(url)
+        .then((responce) => {
+            return responce.json()
+        })
+        .then((data) => {
+            console.log(data);
+            placeName.innerHTML = data.location.name   //nam ta change kora holo
+            temp.innerHTML = `${data.current.temp_c}&deg`
+            weather.innerHTML = data.current.condition.text
+            cloud.innerHTML = `Cloud : ${data.current.cloud}`
+            weatherData = data
+            allButtonInfo(weatherData)
+            allButtonTemp(weatherData)
+            magnifyn()
 
-    zeroImg.src = data.forecast.forecastday[0].hour[0].condition.icon
-    oneImg.src = data.forecast.forecastday[0].hour[1].condition.icon
-    twoImg.src = data.forecast.forecastday[0].hour[2].condition.icon
-    threeImg.src = data.forecast.forecastday[0].hour[3].condition.icon
-    fourImg.src = data.forecast.forecastday[0].hour[4].condition.icon
-    fiveImg.src = data.forecast.forecastday[0].hour[5].condition.icon
-    sixImg.src = data.forecast.forecastday[0].hour[6].condition .icon
-    sevenImg.src = data.forecast.forecastday[0].hour[7].condition.icon
-    eightImg.src = data.forecast.forecastday[0].hour[8].condition.icon
-    nineImg.src = data.forecast.forecastday[0].hour[9].condition.icon
-    tenImg.src = data.forecast.forecastday[0].hour[10].condition.icon
-    elevenImg.src = data.forecast.forecastday[0].hour[11].condition.icon
-    twelveImg.src = data.forecast.forecastday[0].hour[12].condition.icon
-    thirteenImg.src = data.forecast.forecastday[0].hour[12].condition.icon
-    fourteenImg.src = data.forecast.forecastday[0].hour[12].condition.icon
-    fifteenImg.src = data.forecast.forecastday[0].hour[15].condition.icon
-    sixteenImg.src = data.forecast.forecastday[0].hour[16].condition.icon
-    seventeenImg.src = data.forecast.forecastday[0].hour[17].condition.icon
-    eighteenImg.src = data.forecast.forecastday[0].hour[18].condition.icon
-    nineteenImg.src = data.forecast.forecastday[0].hour[19].condition.icon
-    twentyImg.src = data.forecast.forecastday[0].hour[20].condition.icon
-    twentyoneImg.src = data.forecast.forecastday[0].hour[21].condition.icon
-    twentytwoImg.src = data.forecast.forecastday[0].hour[22].condition.icon
-    twentythreeImg.src = data.forecast.forecastday[0].hour[23].condition.icon
+        })
+        .catch((error) => {
+            alert(error)
 
-})
-.catch((error)=>{
-    alert(error)
+        })
 
-})
+}
+
+function allButtonInfo(data){
+
+            zeroImg.src = data.forecast.forecastday[0].hour[0].condition.icon
+            oneImg.src = data.forecast.forecastday[0].hour[1].condition.icon
+            twoImg.src = data.forecast.forecastday[0].hour[2].condition.icon
+            threeImg.src = data.forecast.forecastday[0].hour[3].condition.icon
+            fourImg.src = data.forecast.forecastday[0].hour[4].condition.icon
+            fiveImg.src = data.forecast.forecastday[0].hour[5].condition.icon
+            sixImg.src = data.forecast.forecastday[0].hour[6].condition.icon
+            sevenImg.src = data.forecast.forecastday[0].hour[7].condition.icon
+            eightImg.src = data.forecast.forecastday[0].hour[8].condition.icon
+            nineImg.src = data.forecast.forecastday[0].hour[9].condition.icon
+            tenImg.src = data.forecast.forecastday[0].hour[10].condition.icon
+            elevenImg.src = data.forecast.forecastday[0].hour[11].condition.icon
+            twelveImg.src = data.forecast.forecastday[0].hour[12].condition.icon
+            thirteenImg.src = data.forecast.forecastday[0].hour[12].condition.icon
+            fourteenImg.src = data.forecast.forecastday[0].hour[12].condition.icon
+            fifteenImg.src = data.forecast.forecastday[0].hour[15].condition.icon
+            sixteenImg.src = data.forecast.forecastday[0].hour[16].condition.icon
+            seventeenImg.src = data.forecast.forecastday[0].hour[17].condition.icon
+            eighteenImg.src = data.forecast.forecastday[0].hour[18].condition.icon
+            nineteenImg.src = data.forecast.forecastday[0].hour[19].condition.icon
+            twentyImg.src = data.forecast.forecastday[0].hour[20].condition.icon
+            twentyoneImg.src = data.forecast.forecastday[0].hour[21].condition.icon
+            twentytwoImg.src = data.forecast.forecastday[0].hour[22].condition.icon
+            twentythreeImg.src = data.forecast.forecastday[0].hour[23].condition.icon
+
+}
+
+function allButtonTemp(data){
+    zeroTemp.innerHTML = data.forecast.forecastday[0].hour[0].temp_c
+    oneTemp.innerHTML = data.forecast.forecastday[0].hour[1].temp_c
+    twoTemp.innerHTML = data.forecast.forecastday[0].hour[2].temp_c
+    threeTemp.innerHTML = data.forecast.forecastday[0].hour[3].temp_c
+    fourTemp.innerHTML = data.forecast.forecastday[0].hour[4].temp_c
+    fiveTemp.innerHTML = data.forecast.forecastday[0].hour[5].temp_c
+    sixTemp.innerHTML = data.forecast.forecastday[0].hour[6].temp_c
+    sevenTemp.innerHTML = data.forecast.forecastday[0].hour[7].temp_c
+    eightTemp.innerHTML = data.forecast.forecastday[0].hour[8].temp_c
+    nineTemp.innerHTML = data.forecast.forecastday[0].hour[9].temp_c
+    tenTemp.innerHTML = data.forecast.forecastday[0].hour[10].temp_c
+    elevenTemp.innerHTML = data.forecast.forecastday[0].hour[11].temp_c
+    twelveTemp.innerHTML = data.forecast.forecastday[0].hour[12].temp_c
+    thirteenTemp.innerHTML = data.forecast.forecastday[0].hour[13].temp_c
+    fourteenTemp.innerHTML = data.forecast.forecastday[0].hour[14].temp_c
+    fifteenTemp.innerHTML = data.forecast.forecastday[0].hour[15].temp_c
+    sixteenTemp.innerHTML = data.forecast.forecastday[0].hour[16].temp_c
+    seventeenTemp.innerHTML = data.forecast.forecastday[0].hour[17].temp_c
+    eighteenTemp.innerHTML = data.forecast.forecastday[0].hour[18].temp_c
+    nineteenTemp.innerHTML = data.forecast.forecastday[0].hour[19]. temp_c
+    twentyTemp.innerHTML = data.forecast.forecastday[0].hour[20].temp_c
+    twentyoneTemp.innerHTML = data.forecast.forecastday[0].hour[21].temp_c
+    twentytwoTemp.innerHTML = data.forecast.forecastday[0].hour[22].temp_c
+    twentythreeTemp.innerHTML = data.forecast.forecastday[0].hour[23].temp_c
+}
+
+
+
+function magnifyn() {
+    magnifyne.addEventListener('click', () => {
+        let inputLocation = prompt("Enter Location")
+        console.log(inputLocation);
+        
+        coords = inputLocation
+
+        useLatLong()
+
+    })
 
 }
 
 
 
-
-
-function failed(){
+function failed() {
     console.log(erroe);
-    
+
 }
 // Get Live Location
-setTimeout(async()=>{
-    navigator.geolocation.getCurrentPosition(gotLocation,failed)
-},10)
+setTimeout(async () => {
+    navigator.geolocation.getCurrentPosition(gotLocation, failed)
+}, 10)
 
 
 
