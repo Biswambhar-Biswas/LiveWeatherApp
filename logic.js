@@ -17,8 +17,7 @@ function gotLocation(position){
 
 function useLatLong() {
 // Fetch The Weather
-let url = `http://api.weatherapi.com/v1/forecast.json?key=02110cde51964733a68123509252005&q=${latitude},${longitude}&days=1&aqi=no&alerts=no
-`
+let url = `http://api.weatherapi.com/v1/forecast.json?key=02110cde51964733a68123509252005&q=Kolkata&days=1&aqi=no&alerts=no`
 fetch(url)
 .then(async(responce)=>{
     return responce.json()
