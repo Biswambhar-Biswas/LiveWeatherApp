@@ -199,3 +199,180 @@ body {
     border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ; */
     
 }
+
+/*SECOND PAGE INFO STYLE*/
+/*SECOND PAGE INFO STYLE*/
+/*SECOND PAGE INFO STYLE*/
+
+
+
+.anotherPageButtom{
+    height: 90%;
+    /* width: 100%; */
+    position:absolute;
+    /* z-index: 1; */
+    bottom:0px ;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+
+
+    /* background: rgba(91, 29, 141, 0.877); */
+    /* background: #020024; */
+background: linear-gradient(180deg,rgba(2, 0, 36, 1) 0%, rgb(93, 22, 135) 0%, rgba(3, 0, 0, 1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.356);
+
+    white-space: nowrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: 0px;
+}
+
+
+#gripline{
+    color: rgba(240, 248, 255, 0.911);
+    font-size: 60px;
+    text-align: center;
+    width: 100%;
+    position: sticky;
+    top:0%;
+}
+
+.humidity{
+    /* From https://css.glass */
+background: rgba(156, 62, 233, 0.192);
+    height:160px;
+    width: 160px;
+    border-radius: 20px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.windSpeed{
+background: rgba(156, 62, 233, 0.192);
+    height:160px;
+    width: 160px;
+    border-radius: 20px;
+    display: flex;
+    float: right;
+    margin-right:30px;
+    margin-top: 30px;
+   
+}
+#wind_p{
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    top: -9px;
+    left: 9px;
+}
+#wind{
+    color: gray;
+    margin-right:5px;
+    font-size: 13px;
+}
+.uvIndex{
+background: rgba(156, 62, 233, 0.192);
+    height:160px;
+    width: 160px;
+    border-radius: 20px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+#uvSun_p{
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    top: -9px;
+    left: 9px;
+}
+#uvSun{
+    color: gray;
+    margin-right:5px;
+    font-size: 13px;
+}
+
+.sunset{
+ 
+background: rgba(156, 62, 233, 0.192);
+    height:160px;
+    width: 160px;
+    border-radius: 20px;
+    float: right;
+    margin-right:30px;
+    margin-top: 30px;
+    
+}
+.rainfall{
+background: rgba(156, 62, 233, 0.192);
+    height:160px;
+    width: 160px;
+    border-radius: 20px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 30px;  
+}
+#rainfall_p{
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    top: -9px;
+    left: 9px;
+}
+#rainfall{
+    color: gray;
+    margin-right:5px;
+    font-size: 13px;
+}
+.feelsLike{
+background: rgba(156, 62, 233, 0.192);
+    height:160px;
+    width: 160px;
+    border-radius: 20px;
+    float: right;
+    margin-right:30px;
+    margin-top:30px;
+}
+#feelslike_p{
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    top: -9px;
+    left: 9px;
+}
+#feelslike{
+    color: gray;
+    margin-right:5px;
+    font-size: 13px;
+}
+.visibility{
+background: rgba(156, 62, 233, 0.192);
+    height:160px;
+    width: 160px;
+    border-radius: 20px;
+    float: left;
+    margin-left:30px;
+    margin-top:30px;       
+}
+#visibility_p{
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    top: -9px;
+    left: 9px;
+}
+#visibility{
+        color: gray;
+    margin-right:5px;
+    font-size: 13px;
+}
+.pressure{
+background: rgba(156, 62, 233, 0.192);
+    height:160px;
+    width: 160px;
+    border-radius: 20px;
+    float: right;
+    margin-right:30px;
+    margin-top:30px;
+     
+}
