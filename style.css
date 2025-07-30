@@ -192,6 +192,45 @@ body {
 }
 
 
+.searchLocation {
+    /* position: fixed;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%; */
+
+    width: 100%;
+    /* background-color: aliceblue; */
+    height: auto;
+    position: fixed;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: red; */
+
+}
+
+
+#magnifyne {
+    color: aliceblue;
+    font-size: 72px;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ; */
+}
+#locket{
+    font-size:35px ;
+    color: aliceblue;
+}
+#hamburger{
+    /* position: relative; */
+    /* right: 72px; */
+    font-size: 35px;
+    color: aliceblue;
+}
+
+
 #magnifyne {
     color: aliceblue;
     font-size: 72px;
@@ -200,8 +239,7 @@ body {
     
 }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 /*SECOND PAGE INFO STYLE*/
 /*SECOND PAGE INFO STYLE*/
 /*SECOND PAGE INFO STYLE*/
@@ -211,7 +249,7 @@ body {
 .anotherPageButtom{
     display:none;
     height: 90%;
-    /* width: 100%; */
+    width: auto;
     position:absolute;
     /* z-index: 1; */
     bottom:0px ;
@@ -379,9 +417,5 @@ background: rgba(156, 62, 233, 0.192);
     margin-top:30px;
      
 }
-=======
 
->>>>>>> Stashed changes
-=======
 
->>>>>>> Stashed changes
