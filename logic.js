@@ -1,4 +1,4 @@
-
+alert("Please Turn Your Location ON")
 let placeName = document.getElementById('location')
 let temp = document.getElementById('temp')
 let weather = document.getElementById('weather')
