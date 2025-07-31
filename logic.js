@@ -1,4 +1,4 @@
-alert("Please Turn Your Location ON")
+alert("Please Turn Your Phone Location ON")
 let placeName = document.getElementById('location')
 let temp = document.getElementById('temp')
 let weather = document.getElementById('weather')
