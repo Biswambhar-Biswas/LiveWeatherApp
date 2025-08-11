@@ -237,11 +237,17 @@ function failed() {
     })
     .then((data)=>{
         console.log(data);
+    
         
     })
-    .catch(()=>{})
-
+    .catch((error)=>{error})
 }
+
+
+console.log(data);
+
+
+
 setTimeout(async () => {
     navigator.geolocation.getCurrentPosition(gotLocation, failed)
 }, 10)
