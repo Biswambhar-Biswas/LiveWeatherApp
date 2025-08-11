@@ -146,8 +146,8 @@ function useLatLong() {
             magnifyn()
 
         })
-        .catch((Fetch_hoi_nii) => {
-            alert(`Fetch hoi ni ${Fetch_hoi_nii}`)
+        .catch((error) => {
+            alert(error)
 
         })
 
@@ -226,11 +226,22 @@ function magnifyn() {
 
 
 
+
+// Get Live Location
+
 function failed() {
-    console.log(erroe);
+    // console.log(erroe);
+    fetch("https://api.ipify.org?format=json")
+    .then((responce)=>{
+        return responce.json()
+    })
+    .then((data)=>{
+        console.log(data);
+        
+    })
+    .catch(()=>{})
 
 }
-// Get Live Location
 setTimeout(async () => {
     navigator.geolocation.getCurrentPosition(gotLocation, failed)
 }, 10)
