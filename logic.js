@@ -147,7 +147,7 @@ function useLatLong() {
 
         })
         .catch((error) => {
-            alert(error)
+            alert("Fetch hoi nii")
 
         })
 
