@@ -4,7 +4,6 @@ let temp = document.getElementById('temp')
 let weather = document.getElementById('weather')
 let cloud = document.getElementById('cloud')
 
-import URI from env
 
 //fetch all buttons
 
@@ -127,11 +126,10 @@ function gotLocation(position) {
     useLatLong();
 }
 
-
 let weatherData
 function useLatLong() {
     // Fetch The Weather
-    let url = `${URI}`
+    let url = `https://api.weatherapi.com/v1/forecast.json?key=02110cde51964733a68123509252005&q=${coords}&days=1&aqi=no&alerts=no`
     fetch(url)
         .then((responce) => {
             return responce.json()
