@@ -146,8 +146,8 @@ function useLatLong() {
             magnifyn()
 
         })
-        .catch((error) => {
-            alert("Fetch hoi nii")
+        .catch((Fetch_hoi_nii) => {
+            alert(`Fetch hoi ni ${Fetch_hoi_nii}`)
 
         })
 
