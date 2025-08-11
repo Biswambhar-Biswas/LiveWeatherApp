@@ -237,15 +237,26 @@ function failed() {
     })
     .then((data)=>{
         console.log(data);
+        callLocationUsingIp(data)
     
-        return data
     })
     .catch((error)=>{error})
 }
 
 
-console.log(data);
+let callLocationUsingIp = function(dataFromIP){
+    fetch(`http://ip-api.com/json/${dataFromIP}`
 
+)
+    .then((responce)=>{
+        return responce.json()
+    })
+    .then((data)=>{
+        console.log(data);
+        
+    })
+    .catch((error)=>{error})
+}
 
 
 setTimeout(async () => {
