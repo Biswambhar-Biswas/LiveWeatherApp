@@ -238,7 +238,7 @@ function failed() {
     .then((data)=>{
         console.log(data);
     
-        
+        return data
     })
     .catch((error)=>{error})
 }
